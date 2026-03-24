@@ -1,0 +1,24 @@
+[project]
+name = "growai-labs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "accelerate>=1.13.0",
+    "faiss-cpu>=1.13.2",
+    "jupyter>=1.1.1",
+    "nbconvert>=7.17.0",
+    "pandas>=3.0.1",
+    "sentence-transformers>=5.3.0",
+    "tabulate>=0.10.0",
+    "transformers>=5.3.0",
+]
+
+[dependency-groups]
+core = [
+    "accelerate>=1.13.0",
+    "faiss-cpu>=1.13.2",
+    "sentence-transformers>=5.3.0",
+    "transformers>=5.3.0",
+]
