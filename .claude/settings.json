@@ -1,7 +1,6 @@
 {
   "permissions": {
     "allow": [
-      // Safe file operations inside the current project only
       "Read(${PWD}/**)",
       "Glob(${PWD}/**)",
       "Grep(${PWD}/**)",
@@ -10,8 +9,6 @@
       "MultiEdit(${PWD}/**)",
       "NotebookRead(${PWD}/**)",
       "NotebookEdit(${PWD}/**)",
-
-      // Common safe bash commands for development
       "Bash(ls *)",
       "Bash(cd *)",
       "Bash(pwd)",
@@ -20,42 +17,30 @@
       "Bash(grep *)",
       "Bash(find *)",
       "Bash(tree *)",
-
-      // Git basics (safe subset)
       "Bash(git status)",
       "Bash(git diff *)",
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git log *)",
       "Bash(git branch *)",
-
-      // Dependency management (uv is fast & modern; adapt if using poetry/pdm/pip)
       "Bash(uv *)",
       "Bash(pip list)",
       "Bash(pip show *)",
-
-      // Jupyter / notebook tools
       "Bash(jupyter *)",
       "Bash(jupyter-lab *)",
       "Bash(jupyter nbconvert *)"
     ],
-
     "ask": [
-      // Always confirm potentially destructive or remote actions
       "Bash(rm *)",
       "Bash(mv *)",
       "Bash(cp *)",
       "Bash(git push *)",
       "Bash(git pull *)",
       "Bash(git fetch *)",
-      "Bash(* --help *)",  // optional: ask on help flags to catch unknowns
-
-      // Any unknown or broad bash commands
+      "Bash(* --help *)",
       "Bash(*)"
     ],
-
     "deny": [
-      // Block dangerous or sensitive operations
       "Bash(rm -rf / *)",
       "Bash(*sudo *)",
       "Bash(*su *)",
@@ -63,8 +48,6 @@
       "Bash(wget *)",
       "Bash(ssh *)",
       "Bash(scp *)",
-
-      // Protect secrets & system files
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(./secrets/**)",
@@ -72,8 +55,6 @@
       "Read(/etc/**)",
       "Edit(**/.env)",
       "Write(**/.env)",
-
-      // Block broad external access (unless you explicitly need it later)
       "WebFetch",
       "WebSearch"
     ]
